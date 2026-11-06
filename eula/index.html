@@ -145,7 +145,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
     var u = ['randomtom', 'fonts'].join('.'), d = ['gmail', 'com'].join('.'), m = u + '@' + d;
     document.querySelectorAll('.js-mail').forEach(function (a) {
       a.href = 'mailto:' + m + '?subject=' + encodeURIComponent('Font license — Random Tom');
-      if (a.textContent.trim() === 'e-mail') a.textContent = m;
+      if (a.textContent.trim() === 'e-mail') a.textContent = u + '(at)' + d;
     });
   })();
 </script>
