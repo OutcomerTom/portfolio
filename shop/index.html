@@ -680,5 +680,16 @@ footer { background: var(--bg-2); border-top: 1px solid var(--border); padding: 
   document.querySelectorAll('a.col-card').forEach(c => c.addEventListener('click', () => { if (location.hash === c.getAttribute('href')) fromHash(true); }));
 </script>
 
+<!-- GoatCounter: cookie-free visit stats (randomtom.goatcounter.com) -->
+<script>
+  // Count clicks on outbound links (Payhip "Buy", MyFonts, Pinterest...) as events
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href^="http"]');
+    if (!a || a.host === location.host || !window.goatcounter || !goatcounter.count) return;
+    var u = new URL(a.href);
+    goatcounter.count({ path: 'out: ' + u.host + u.pathname, title: (a.textContent || '').trim().slice(0, 80), event: true });
+  });
+</script>
+<script data-goatcounter="https://randomtom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
